@@ -18,7 +18,13 @@ export type eNetwork =
   | eFantomNetwork
   | eOptimismNetwork
   | eTenderlyNetwork
-  | eBaseNetwork;
+  | eBaseNetwork
+  | eTaraxaNetwork;
+
+export enum eTaraxaNetwork {
+  main = "taraxa",
+  testnet = "taraxa-testnet",
+}
 
 type eTenderlyNetwork = "tenderly";
 

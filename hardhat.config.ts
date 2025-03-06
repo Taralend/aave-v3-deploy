@@ -15,6 +15,7 @@ import {
   eOptimismNetwork,
   ePolygonNetwork,
   eBaseNetwork,
+  eTaraxaNetwork,
 } from "./helpers/types";
 import { DEFAULT_NAMED_ACCOUNTS } from "./helpers/constants";
 
@@ -127,6 +128,11 @@ export default {
       eBaseNetwork.baseGoerli,
       84531
     ),
+    [eTaraxaNetwork.main]: getCommonNetworkConfig(eTaraxaNetwork.main, 841),
+    [eTaraxaNetwork.testnet]: getCommonNetworkConfig(
+      eTaraxaNetwork.testnet,
+      842
+    ),
   },
   namedAccounts: {
     ...DEFAULT_NAMED_ACCOUNTS,
@@ -215,6 +221,22 @@ export default {
         urls: {
           apiURL: "https://api.basescan.org/api",
           browserURL: "https://basescan.org/",
+        },
+      },
+      {
+        network: eTaraxaNetwork.main,
+        chainId: 841,
+        urls: {
+          apiURL: "https://tara.to/api",
+          browserURL: "https://tara.to/",
+        },
+      },
+      {
+        network: eTaraxaNetwork.testnet,
+        chainId: 842,
+        urls: {
+          apiURL: "https://testnet.to/api",
+          browserURL: "https://testnet.to/",
         },
       },
     ],

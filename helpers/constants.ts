@@ -8,6 +8,7 @@ import {
   eHarmonyNetwork,
   eOptimismNetwork,
   ePolygonNetwork,
+  eTaraxaNetwork,
 } from "./types";
 
 const {
@@ -46,6 +47,8 @@ export const WRAPPED_NATIVE_TOKEN_PER_NETWORK: { [network: string]: string } = {
   [eFantomNetwork.main]: "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
   [eHarmonyNetwork.main]: "0xcF664087a5bB0237a0BAd6742852ec6c8d69A27a",
   [ePolygonNetwork.polygon]: "0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270",
+  [eTaraxaNetwork.main]: "0x5d0Fa4C5668E5809c83c95A7CeF3a9dd7C68d4fE",
+  [eTaraxaNetwork.testnet]: "0x80430bEBAF5AfA9317f9b6562504f38A7adB507f",
 };
 
 export const ZERO_BYTES_32 =
@@ -77,6 +80,7 @@ export const MOCK_CHAINLINK_AGGREGATORS_PRICES: { [key: string]: string } = {
   JEUR: parseUnits("1.126", 8).toString(),
   DPI: parseUnits("149", 8).toString(),
   CBETH: parseUnits("4000", 8).toString(),
+  WTARA: parseUnits("0.01", 8).toString(),
 };
 
 export const chainlinkAggregatorProxy: Record<string, string> = {
