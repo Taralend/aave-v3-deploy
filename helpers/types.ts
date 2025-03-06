@@ -9,6 +9,7 @@ export enum eTenderly {
 }
 
 export type eNetwork =
+  | eTaraxaNetwork
   | eEthereumNetwork
   | ePolygonNetwork
   | eXDaiNetwork
@@ -19,6 +20,11 @@ export type eNetwork =
   | eOptimismNetwork
   | eTenderlyNetwork
   | eBaseNetwork;
+
+export enum eTaraxaNetwork {
+  main = "taraxa",
+  testnet = "taraxa-testnet",
+}
 
 type eTenderlyNetwork = "tenderly";
 
@@ -440,6 +446,11 @@ export interface iParamsPerNetworkAll<T>
   extends iEthereumParamsPerNetwork<T>,
     iPolygonParamsPerNetwork<T>,
     iXDaiParamsPerNetwork<T> {}
+
+export interface iTaraxaParamsPerNetwork<T> {
+  [eTaraxaNetwork.main]: T;
+  [eTaraxaNetwork.testnet]: T;
+}
 
 export interface iEthereumParamsPerNetwork<T> {
   [eEthereumNetwork.kovan]: T;

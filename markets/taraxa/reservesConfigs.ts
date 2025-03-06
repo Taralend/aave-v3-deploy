@@ -1,0 +1,92 @@
+import { rateStrategyStable, rateStrategyVolatile } from "./rateStrategies";
+import { eContractid, IReserveParams } from "../../helpers/types";
+
+export const strategyWTARA: IReserveParams = {
+  strategy: rateStrategyVolatile,
+  baseLTVAsCollateral: "5000",
+  liquidationThreshold: "5500",
+  liquidationBonus: "10500",
+  liquidationProtocolFee: "1000",
+  borrowingEnabled: true,
+  stableBorrowRateEnabled: false,
+  flashLoanEnabled: false,
+  reserveDecimals: "18",
+  aTokenImpl: eContractid.AToken,
+  reserveFactor: "1500",
+  supplyCap: "100000",
+  borrowCap: "50000",
+  debtCeiling: "0",
+  borrowableIsolation: false,
+};
+
+export const strategystTARA: IReserveParams = {
+  strategy: rateStrategyVolatile,
+  baseLTVAsCollateral: "5000",
+  liquidationThreshold: "5500",
+  liquidationBonus: "10500",
+  liquidationProtocolFee: "1000",
+  borrowingEnabled: true,
+  stableBorrowRateEnabled: false,
+  flashLoanEnabled: false,
+  reserveDecimals: "18",
+  aTokenImpl: eContractid.AToken,
+  reserveFactor: "1500",
+  supplyCap: "100000",
+  borrowCap: "50000",
+  debtCeiling: "0",
+  borrowableIsolation: false,
+};
+
+export const strategyWETH: IReserveParams = {
+  strategy: rateStrategyVolatile,
+  baseLTVAsCollateral: "6000",
+  liquidationThreshold: "6300",
+  liquidationBonus: "10500",
+  liquidationProtocolFee: "1000",
+  borrowingEnabled: true,
+  stableBorrowRateEnabled: false,
+  flashLoanEnabled: false,
+  reserveDecimals: "18",
+  aTokenImpl: eContractid.AToken,
+  reserveFactor: "1500",
+  supplyCap: "100000",
+  borrowCap: "60000",
+  debtCeiling: "0",
+  borrowableIsolation: false,
+};
+
+export const strategyUSDC: IReserveParams = {
+  strategy: rateStrategyStable,
+  baseLTVAsCollateral: "7000",
+  liquidationThreshold: "7300",
+  liquidationBonus: "10500",
+  liquidationProtocolFee: "1000",
+  borrowingEnabled: true,
+  stableBorrowRateEnabled: false,
+  flashLoanEnabled: false,
+  reserveDecimals: "6",
+  aTokenImpl: eContractid.AToken,
+  reserveFactor: "1000",
+  supplyCap: "100000",
+  borrowCap: "90000",
+  debtCeiling: "0",
+  borrowableIsolation: false,
+};
+
+export const strategyUSDT: IReserveParams = {
+  strategy: rateStrategyStable,
+  baseLTVAsCollateral: "7000",
+  liquidationThreshold: "7300",
+  liquidationBonus: "10500",
+  liquidationProtocolFee: "1000",
+  borrowingEnabled: true,
+  stableBorrowRateEnabled: false,
+  flashLoanEnabled: false,
+  reserveDecimals: "6",
+  aTokenImpl: eContractid.AToken,
+  reserveFactor: "1000",
+  supplyCap: "100000",
+  borrowCap: "90000",
+  debtCeiling: "0",
+  borrowableIsolation: false,
+};

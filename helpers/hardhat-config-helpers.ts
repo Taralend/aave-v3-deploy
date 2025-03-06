@@ -3,6 +3,7 @@ import path from "path";
 import { HardhatNetworkForkingUserConfig } from "hardhat/types";
 import {
   iParamsPerNetwork,
+  eTaraxaNetwork,
   eEthereumNetwork,
   eNetwork,
   ePolygonNetwork,
@@ -56,6 +57,8 @@ export const getAlchemyKey = (net: eNetwork) => {
 };
 
 export const NETWORKS_RPC_URL: iParamsPerNetwork<string> = {
+  [eTaraxaNetwork.main]: `https://rpc.mainnet.taraxa.io`,
+  [eTaraxaNetwork.testnet]: `https://rpc.testnet.taraxa.io`,
   [eEthereumNetwork.kovan]: `https://eth-kovan.alchemyapi.io/v2/${getAlchemyKey(
     eEthereumNetwork.kovan
   )}`,
@@ -101,6 +104,7 @@ export const NETWORKS_RPC_URL: iParamsPerNetwork<string> = {
 };
 
 export const LIVE_NETWORKS: iParamsPerNetwork<boolean> = {
+  [eTaraxaNetwork.main]: true,
   [eEthereumNetwork.main]: true,
   [ePolygonNetwork.polygon]: true,
   [eArbitrumNetwork.arbitrum]: true,
@@ -150,12 +154,13 @@ export const getCommonNetworkConfig = (
   chainId,
   gasPrice: GAS_PRICE_PER_NET[networkName] || undefined,
   ...((!!MNEMONICS[networkName] || !!MNEMONIC) && {
-    accounts: {
-      mnemonic: MNEMONICS[networkName] || MNEMONIC,
-      path: MNEMONIC_PATH,
-      initialIndex: 0,
-      count: 10,
-    },
+    accounts: [process.env.PRIVATE_KEY],
+    // accounts: {
+    //   mnemonic: MNEMONICS[networkName] || MNEMONIC,
+    //   path: MNEMONIC_PATH,
+    //   initialIndex: 0,
+    //   count: 10,
+    // },
   }),
   live: LIVE_NETWORKS[networkName] || false,
 });

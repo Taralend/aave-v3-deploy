@@ -1,5 +1,6 @@
 import { parseEther, parseUnits } from "ethers/lib/utils";
 import {
+  eTaraxaNetwork,
   eArbitrumNetwork,
   eAvalancheNetwork,
   eBaseNetwork,
@@ -46,6 +47,7 @@ export const WRAPPED_NATIVE_TOKEN_PER_NETWORK: { [network: string]: string } = {
   [eFantomNetwork.main]: "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83",
   [eHarmonyNetwork.main]: "0xcF664087a5bB0237a0BAd6742852ec6c8d69A27a",
   [ePolygonNetwork.polygon]: "0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270",
+  [eTaraxaNetwork.main]: "0x5d0Fa4C5668E5809c83c95A7CeF3a9dd7C68d4fE",
 };
 
 export const ZERO_BYTES_32 =
@@ -53,8 +55,8 @@ export const ZERO_BYTES_32 =
 
 export const MOCK_CHAINLINK_AGGREGATORS_PRICES: { [key: string]: string } = {
   AAVE: parseUnits("300", 8).toString(),
-  WETH: parseUnits("4000", 8).toString(),
-  ETH: parseUnits("4000", 8).toString(),
+  WETH: parseUnits("2000", 8).toString(),
+  ETH: parseUnits("2000", 8).toString(),
   DAI: parseUnits("1", 8).toString(),
   USDC: parseUnits("1", 8).toString(),
   USDT: parseUnits("1", 8).toString(),
@@ -77,6 +79,8 @@ export const MOCK_CHAINLINK_AGGREGATORS_PRICES: { [key: string]: string } = {
   JEUR: parseUnits("1.126", 8).toString(),
   DPI: parseUnits("149", 8).toString(),
   CBETH: parseUnits("4000", 8).toString(),
+  WTARA: parseUnits("0.01", 8).toString(),
+  stTARA: parseUnits("0.011", 8).toString(),
 };
 
 export const chainlinkAggregatorProxy: Record<string, string> = {
@@ -100,6 +104,7 @@ export const chainlinkAggregatorProxy: Record<string, string> = {
   goerli: "0x60E4B131f0F219c72b0346675283E73888e4AB24",
   [eArbitrumNetwork.goerliNitro]: "0xC09e69E79106861dF5d289dA88349f10e2dc6b5C",
   [eEthereumNetwork.sepolia]: "0x6c60d915c7a646860dba836ffcb7f112b6cfdc76",
+  // taraxa: "",
 };
 
 export const chainlinkEthUsdAggregatorProxy: Record<string, string> = {
@@ -123,6 +128,7 @@ export const chainlinkEthUsdAggregatorProxy: Record<string, string> = {
   goerli: "0x60E4B131f0F219c72b0346675283E73888e4AB24",
   [eArbitrumNetwork.goerliNitro]: "0xC09e69E79106861dF5d289dA88349f10e2dc6b5C",
   [eEthereumNetwork.sepolia]: "0x6c60d915c7a646860dba836ffcb7f112b6cfdc76",
+  // taraxa: "",
 };
 
 export const ETHEREUM_SHORT_EXECUTOR =
@@ -171,10 +177,10 @@ export const DEFAULT_NAMED_ACCOUNTS = {
     default: 0,
   },
   treasuryProxyAdmin: {
-    default: 1,
+    default: 0,
   },
   incentivesProxyAdmin: {
-    default: 1,
+    default: 0,
   },
   incentivesEmissionManager: {
     default: 0,
